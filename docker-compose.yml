@@ -11,11 +11,11 @@ services:
     ports:
       - "80:80"
     environment:
-      VIRTUAL_HOST: mydomain.com, www.mydomain.com
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_NAME: mydbname
-      WORDPRESS_DB_USER: mydbuser
-      WORDPRESS_DB_PASSWORD: mydbpassword
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       # Set the XDEBUG_CONFIG as described here: https://xdebug.org/docs/all_settings#XDEBUG_CONFIG
 #      XDEBUG_CONFIG: client_host=192.168.43.224 # This is for XDebug 3. For XDebug 2, we should use remote_host instead of client_host.
       XDEBUG_CONFIG: client_host=192.168.43.224 # This is for XDebug 3. For XDebug 2, we should use remote_host instead of client_host.
