@@ -1,1 +1,7 @@
-.idea
+*
+!docker-compose.dev.yml
+!.dockerignore
+!xdebug
+!.env
+!.gitignore
+

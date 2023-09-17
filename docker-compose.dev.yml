@@ -9,7 +9,7 @@ services:
       dockerfile: Dockerfile # this line is actually redundant here - you need it only if you want to use some custom name for your Dockerfile
       context: ./xdebug # a path to a directory containing a Dockerfile, or a URL to a git repository.
     ports:
-      - "83:80"
+      - "80:80"
     environment:
       VIRTUAL_HOST: mydomain.com, www.mydomain.com
       WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
@@ -25,10 +25,10 @@ services:
     volumes:
       #      - /opt/projects/wpd/www:/var/www/html
       #      - wordpress-core:/var/www/html
-      #      - .:/var/www/html
+      - .:/var/www/html
       #      - ../wordpress:6.3.1-php8.0-apache-volume:/var/www/html # This is a volume with the wordpress core files. It is created by the script "create-wordpress-core-volume.sh"
-      - ../wordpress:/var/www/html
-      - ./solar-calculator:/var/www/html/wp-content/plugins/solar-calculator
+      #      - ../wordpress:/var/www/html
+      #      - ./solar-calculator:/var/www/html/wp-content/plugins/solar-calculator
       #      Expose the root wp directory as a volume in case we want to add some plugins or themes
       #      - ./wp-content:/var/www/html/wp-content
       #      - ./wp-content/plugins/awesome:/var/www/html/wp-content/plugins/awesome
